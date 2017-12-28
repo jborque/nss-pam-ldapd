@@ -39,7 +39,7 @@
 
 Name:		nss-pam-ldapd
 Version:	0.8.13
-Release:	8%{?dist}
+Release:	9%{?dist}
 Summary:	An nsswitch module which uses directory servers
 Group:		System Environment/Base
 License:	LGPLv2+
@@ -57,6 +57,7 @@ Patch5:		nss-pam-ldapd-0.8.12-fix-buffer-overflow-on-interrupted-read-thanks-Joh
 Patch6:		nss-pam-ldapd-rh-msgs-in-tests.patch
 Patch7:         nss-pam-ldapd-0.8.13-Fix-use-after-free-in-read_hostent-and-read_netent.patch
 Patch8:         nss-pam-ldapd-0.8.13-Use-right-h_errnop-for-retrying-with-larger-buffer.patch
+Patch9:         nss-pam-ldapd-0.8.13-Also-honor-ignorecase-in-PAM.patch
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:	openldap-devel, krb5-devel
@@ -112,6 +113,7 @@ nsswitch module.
 %patch6 -p1 -b .test_msgs
 %patch7 -p1 -b .use_after_free
 %patch8 -p1 -b .errnop_val
+%patch9 -p1 -b .ignorecase
 autoreconf -f -i
 
 %build

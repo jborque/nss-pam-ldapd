@@ -1,0 +1,13 @@
+diff --git a/nslcd/pam.c b/nslcd/pam.c
+index 53d4433..b3e94fd 100644
+--- a/nslcd/pam.c
++++ b/nslcd/pam.c
+@@ -133,7 +133,7 @@ static void update_username(MYLDAP_ENTRY *entry,char *username,size_t username_l
+     return;
+   }
+   /* check if the username is different and update it if needed */
+-  if (strcmp(username,value)!=0)
++  if (STR_CMP(username,value)!=0)
+   {
+     log_log(LOG_INFO,"username changed from \"%s\" to \"%s\"",username,value);
+     strcpy(username,value);

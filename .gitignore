@@ -1,1 +1,5 @@
 SOURCES/nss-pam-ldapd-0.8.13.tar.gz
+BUILD/
+RPMS/
+SRPMS/
+workflow
